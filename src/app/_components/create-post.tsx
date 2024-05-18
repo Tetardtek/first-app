@@ -16,6 +16,7 @@ export function CreatePost() {
     },
   });
 
+
   return (
     <form
       onSubmit={(e) => {
