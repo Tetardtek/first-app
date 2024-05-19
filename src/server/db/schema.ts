@@ -38,6 +38,8 @@ export const posts = createTable(
   })
 );
 
+
+
 export const users = createTable("user", {
   id: varchar("id", { length: 255 }).notNull().primaryKey(),
   name: varchar("name", { length: 255 }),

@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { type Locale, i18n } from "@/i18n.config";
+
 
 export const metadata = {
   title: "Create T3 App",
@@ -10,10 +12,15 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
+  params: {lang:Locale}
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} `}>
@@ -23,3 +30,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// PATH AUTH : LOGIN / REGISTER / LOGOUT

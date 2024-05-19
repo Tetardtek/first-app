@@ -1,4 +1,4 @@
-
+import "server-only"
 import { neon, Connection , NeonQueryFunction} from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import postgres from "postgres";

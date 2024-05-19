@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { CreatePost } from "@/app/_components/create-post";
+import { CreatePost } from "@/app/[lang]/_components/create-post";
 import { getServerAuthSession } from "@/server/auth";
 import { api } from "@/trpc/server";
 import {
@@ -16,8 +16,16 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Miaou from "./_components/miaou"
+import type { Locale } from "@/i18n.config";
+import { getDictionary } from "@/lib/dictionary";
 
-export default async function Home() {
+
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale};
+}) {
+  const dictionary = await getDictionary(lang, "landing");
   const hello = await api.post.hello({ text: "hello" });
   const session = await getServerAuthSession();
   const latestPost = await api.post.getLatest();
@@ -27,7 +35,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
+          {dictionary.nothing} <span className="text-[hsl(280,100%,70%)]">T3</span> App
         </h1>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
           <Link
@@ -73,7 +81,7 @@ export default async function Home() {
       </div>
       <CrudShowcase />
       { latestPost === undefined || 
-      <Miaou data={latestPost}/>
+      <Miaou data={latestPost} text={dictionary}/>
       }
     </main>
   );
