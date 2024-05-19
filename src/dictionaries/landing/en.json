@@ -1,4 +1,12 @@
 {
     "hello": "hello",
-    "nothing": "nothing"
+    "first": "First Steps",
+    "create": "Create",
+    "basics": "Just the basics - Everything you need to know to set up your database and authentication.",
+    "learnMore": "Learn more about Create T3 App, the libraries it uses, and how to deploy it.",
+    "loggedIn": "Logged in as",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "recentPosts": "Your most recent post",
+    "noPostRecent": "You have no posts yet"
 }

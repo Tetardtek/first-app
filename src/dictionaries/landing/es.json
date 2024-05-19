@@ -1,4 +1,11 @@
 {
     "hello": "",
-    "nothing": ""
+    "first": "",
+    "create": "",
+    "learnMore": "",
+    "loggedIn": "",
+    "signOut": "",
+    "signIn": "",
+    "recentPosts": "",
+    "noPostRecent": ""
 }

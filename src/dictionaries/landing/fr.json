@@ -1,4 +1,12 @@
 {
     "hello": "bonjour",
-    "nothing": "rien"
+    "first": "Premières étapes",
+    "create": "Créer",
+    "basics": "Juste les bases - Tout ce que vous devez savoir pour configurer votre base de données et l'authentification.",
+    "learnMore": "En savoir plus sur Create T3 App, les bibliothèques qu'il utilise et comment le déployer.",
+    "loggedIn": "Connecté en tant que",
+    "signOut": "Déconnexion",
+    "signIn": "Se connecter",
+    "recentPosts": "Vos articles récents",
+    "noPostRecent": "Vous n'avez pas encore de publications"
 }
